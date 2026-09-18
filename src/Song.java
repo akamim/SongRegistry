@@ -32,6 +32,12 @@ public class Song {
     }
 
     public boolean isLongSong() {
-        return durationSeconds >= 240;
+        return durationSeconds >= 190;
     }
+
+    @Override
+    public String toString(){
+        return title + ", " + artist + ", " + durationSeconds + " sekunder.";
+    }
+
 }

@@ -1,38 +1,51 @@
+import java.util.ArrayList;
+
 public class Main {
     static void main(String[] args) {
-        Song song1 = new Song(
-                "LEMONADE",
-                "aespa",
-                187);
-        Song song2 = new Song(
-                "Bass Persuades",
-                "Miley Cyrus",
-                202);
+        ArrayList<Song> songs = new ArrayList<>();
 
-        song1.printInfo(); // Skriver ut sparad info om song1
-        song2.printInfo();
+        songs.add(new Song("LEMONADE", "aespa", 187));
+        songs.add(new Song("Bass Persuades", "Miley Cyrus", 202));
+        songs.add(new Song("Good For The Soul", "Madonna", 188));
+        songs.add(new Song("Crash Out", "Tinashe", 190));
 
-        System.out.println("\n");
+        System.out.println("Antal låter: " + songs.size());
 
-        System.out.println("Artist: " + song1.getArtist()); // Skriver ut artist namn på song1
-        System.out.println("Title of song: " + song1.getTitle() + "\n"); // Skriver ut song1:s titel
-
-        song1.setDurationsSeconds(160); // Ändrar låtlängd på song1 till 160s
-        song1.printInfo();
-
-        song1.setDurationsSeconds(-10); // Ogiltigt värde, gör inget.
-        song1.printInfo();
-
-        song1.setDurationsSeconds(187); // Ändrar tillbaka till låtens riktiga låtlängd
+        for (Song song : songs){
+            song.printInfo();
+        }
 
         System.out.println("\n");
 
-        if (song1.isLongSong()){ // Baserad på om låten är >= 240 sekunder.
-            System.out.println(song1.getTitle() + " är en lång låt (minst 4 min)." + " Låten är "
-                    + song1.getDurationSeconds() + " sekunder.");
-        } else {
-            System.out.println(song1.getTitle() + ":s låtlängd är kortare än 4 min." + " Låten är "
-                    + song1.getDurationSeconds() + " sekunder.");
+        for (Song song : songs){
+            if (song.isLongSong()){
+                System.out.println(song);
+            }
+        }
+
+        System.out.println("\n");
+
+        int sumDuration = 0;
+        for (Song song : songs){
+            sumDuration += song.durationSeconds;
+        }
+
+        System.out.println("Total längd: " + sumDuration);
+
+        int indexLongestSong = 0;
+
+        for (int i = 0; i < songs.size(); i++){
+            if (songs.get(i).getDurationSeconds() > songs.get(indexLongestSong).getDurationSeconds()){
+                indexLongestSong = i;
+            }
+        }
+        System.out.println(songs.get(indexLongestSong).getTitle() + " är längst.");
+
+        System.out.println("\n");
+
+        for (int i = 0; i < songs.size(); i++){
+            Song song = songs.get(i);
+            System.out.println(i + 1 + ". " + song);
         }
     }
 }
