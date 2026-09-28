@@ -1,7 +1,7 @@
 public class Song {
     private String title;
     private String artist;
-    int durationSeconds;
+    private int durationSeconds;
     private MusicGenre genre;
 
     public Song(String title, String artist, int durationSeconds, MusicGenre genre){

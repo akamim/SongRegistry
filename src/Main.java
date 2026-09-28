@@ -44,7 +44,7 @@ public class Main {
         // Räknar total längd
         int sumDuration = 0;
         for (Song song : songs){
-            sumDuration += song.durationSeconds;
+            sumDuration += song.getDurationSeconds();
         }
 
         // Skriver ut total längd
