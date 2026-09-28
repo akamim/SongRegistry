@@ -2,4 +2,18 @@ public enum MusicGenre {
     POP,
     HIPHOP,
     KPOP,
+    ROCK,
+    RNB,
+    COUNTRY,
+    ELECTRONIC,
+    EDM,
+    JAZZ,
+    CLASSICAL,
+    METAL,
+    LATIN,
+    BLUES,
+    REGGAE,
+    FOLK,
+    ALTERNATIVE,
+    INDIE
 }
