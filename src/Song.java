@@ -74,7 +74,7 @@ public class Song {
 
     @Override
     public String toString(){
-        return title + ", " + artist + ", " + durationSeconds + " sekunder, " + genre + " låt.";
+        return title + ", " + artist + ", " + durationSeconds + " sekunder, " + genre.getTextGenre() + "låt.";
     }
 
 }

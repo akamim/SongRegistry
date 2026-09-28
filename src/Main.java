@@ -75,7 +75,7 @@ public class Main {
         // Filtrerar och skriver ut KPOP-låtar
         for (Song song : songs){
             if (song.getGenre() == MusicGenre.KPOP){
-                System.out.println(song.getTitle() + " är en KPOP låt.");
+                System.out.println(song.getTitle() + " är en " + MusicGenre.KPOP.getTextGenre() + "låt.");
             }
         }
 
